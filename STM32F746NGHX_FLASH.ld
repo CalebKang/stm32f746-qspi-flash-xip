@@ -130,7 +130,7 @@ SECTIONS
     . = ALIGN(4);
     _qspi_end = .;         /* define a global symbols at end of qspi */
     
-  } >RAMX
+  } >RAMX AT> FLASH
 /*>QSPI AT> RAMX*/
   .preinit_array     :
   {

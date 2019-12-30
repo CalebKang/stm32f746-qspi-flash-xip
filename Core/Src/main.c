@@ -278,7 +278,7 @@ int main(void)
 
       case 5:
         {
-#if 0
+#if 1
           /* Execute the code from QSPI memory ------------------------------- */
           uint32_t *ramx = (uint32_t *)(0x20037000);
           uint32_t *qspix = (uint32_t *)(0x90000000);
@@ -289,9 +289,12 @@ int main(void)
             qspix++;
           }
 #endif
-          GpioToggleEx();
-          GpioToggle();
         }
+        step++;
+        break;
+
+      case 6:
+        GpioToggle();
         break;
 
       default :
@@ -368,6 +371,8 @@ static void LOCATE_FUNC GpioToggle(void)
   HAL_GPIO_TogglePin(LED1_GPIO_PORT, LED1_PIN);
   /* Insert delay 200 ms */
   HAL_Delay(200);
+
+  GpioToggleEx();
 }
 
 #if defined(__CC_ARM)
