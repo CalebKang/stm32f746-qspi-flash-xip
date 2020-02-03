@@ -550,7 +550,8 @@ void HAL_QSPI_ErrorCallback(QSPI_HandleTypeDef *hqspi)
 {
   /* Prevent unused argument(s) compilation warning */
   while(1);
-}/* USER CODE END 4 */
+}
+/* USER CODE END 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.
